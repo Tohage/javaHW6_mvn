@@ -2,7 +2,7 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public static long sumSales(int[] salesInMonth) {
+    public long sumSales(int[] salesInMonth) {
         int sumSales = 0;
         for (int sale : salesInMonth) {
             sumSales = sumSales + sale;
@@ -10,12 +10,12 @@ public class StatsService {
         return sumSales;
     }
 
-    public static long averageSalesAmount(int[] salesInMonth) {
+    public long averageSalesAmount(int[] salesInMonth) {
         long average = sumSales(salesInMonth) / salesInMonth.length;
         return average;
     }
 
-    public static int numMonthMaxSales(int[] salesInMonth) {
+    public int numMonthMaxSales(int[] salesInMonth) {
         int maxSales = 0;
         for (int month = 1; month < salesInMonth.length; month++)
             if (salesInMonth[month] >= salesInMonth[maxSales]) {
@@ -24,7 +24,7 @@ public class StatsService {
         return maxSales + 1;
     }
 
-    public static int numMonthMinSales(int[] salesInMonth) {
+    public int numMonthMinSales(int[] salesInMonth) {
         int minSales = 0;
         for (int month = 1; month < salesInMonth.length; month++)
             if (salesInMonth[month] <= salesInMonth[minSales]) {
@@ -33,22 +33,22 @@ public class StatsService {
         return minSales + 1;
     }
 
-    public static int amountMountSalesBelowAverage(int[] salesInMonth) {
+    public int amountMountSalesBelowAverage(int[] salesInMonth) {
         long average = averageSalesAmount(salesInMonth);
         int count = 0;
         for (int sale : salesInMonth) {
-            if (sale  < average) {
+            if (sale < average) {
                 count++;
             }
         }
         return count;
     }
 
-    public static int amountMountSalesAboveAverage(int[] salesInMonth) {
+    public int amountMountSalesAboveAverage(int[] salesInMonth) {
         long average = averageSalesAmount(salesInMonth);
         int count = 0;
         for (int sale : salesInMonth) {
-            if (sale  > average) {
+            if (sale > average) {
                 count++;
             }
         }

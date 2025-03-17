@@ -11,7 +11,7 @@ public class StatsServiceTests {
     public void shouldSumSales() {
         StatsService service = new StatsService();
 
-        long actual = StatsService.sumSales(salesInMonth);
+        long actual = service.sumSales(salesInMonth);
         long expected = 8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18;
 
         Assertions.assertEquals(expected, actual);
@@ -21,7 +21,7 @@ public class StatsServiceTests {
     public void shouldFindAverageSalesAmount() {
         StatsService service = new StatsService();
 
-        long actual = StatsService.averageSalesAmount(salesInMonth);
+        long actual = service.averageSalesAmount(salesInMonth);
         long expected = 15;
 
         Assertions.assertEquals(expected, actual);
@@ -31,7 +31,7 @@ public class StatsServiceTests {
     public void shouldFindMonthMaxSales() {
         StatsService service = new StatsService();
 
-        int actual = StatsService.numMonthMaxSales(salesInMonth);
+        int actual = service.numMonthMaxSales(salesInMonth);
         int expected = 8;
 
         Assertions.assertEquals(expected, actual);
@@ -41,7 +41,7 @@ public class StatsServiceTests {
     public void shouldFindMonthMinSales() {
         StatsService service = new StatsService();
 
-        int actual = StatsService.numMonthMinSales(salesInMonth);
+        int actual = service.numMonthMinSales(salesInMonth);
         int expected = 9;
 
         Assertions.assertEquals(expected, actual);
@@ -51,7 +51,7 @@ public class StatsServiceTests {
     public void shouldFindAmountMountSalesBelowAverage() {
         StatsService service = new StatsService();
 
-        int actual = StatsService.amountMountSalesBelowAverage(salesInMonth);
+        int actual = service.amountMountSalesBelowAverage(salesInMonth);
         int expected = 5;
 
         Assertions.assertEquals(expected, actual);
@@ -62,7 +62,7 @@ public class StatsServiceTests {
         StatsService service = new StatsService();
 
 
-        int actual = StatsService.amountMountSalesAboveAverage(salesInMonth);
+        int actual = service.amountMountSalesAboveAverage(salesInMonth);
         int expected = 5;
 
         Assertions.assertEquals(expected, actual);
