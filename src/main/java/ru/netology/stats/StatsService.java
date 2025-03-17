@@ -2,20 +2,20 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public long sumSales(int[] salesInMonth) {
-        int sumSales = 0;
-        for (int sale : salesInMonth) {
+    public long sumSales(long [] salesInMonth) {
+        long sumSales = 0;
+        for (long sale : salesInMonth) {
             sumSales = sumSales + sale;
         }
         return sumSales;
     }
 
-    public long averageSalesAmount(int[] salesInMonth) {
+    public long averageSalesAmount(long[] salesInMonth) {
         long average = sumSales(salesInMonth) / salesInMonth.length;
         return average;
     }
 
-    public int numMonthMaxSales(int[] salesInMonth) {
+    public int numMonthMaxSales(long[] salesInMonth) {
         int maxSales = 0;
         for (int month = 1; month < salesInMonth.length; month++)
             if (salesInMonth[month] >= salesInMonth[maxSales]) {
@@ -24,7 +24,7 @@ public class StatsService {
         return maxSales + 1;
     }
 
-    public int numMonthMinSales(int[] salesInMonth) {
+    public int numMonthMinSales(long[] salesInMonth) {
         int minSales = 0;
         for (int month = 1; month < salesInMonth.length; month++)
             if (salesInMonth[month] <= salesInMonth[minSales]) {
@@ -33,10 +33,10 @@ public class StatsService {
         return minSales + 1;
     }
 
-    public int amountMountSalesBelowAverage(int[] salesInMonth) {
+    public int amountMountSalesBelowAverage(long[] salesInMonth) {
         long average = averageSalesAmount(salesInMonth);
         int count = 0;
-        for (int sale : salesInMonth) {
+        for (long sale : salesInMonth) {
             if (sale < average) {
                 count++;
             }
@@ -44,10 +44,10 @@ public class StatsService {
         return count;
     }
 
-    public int amountMountSalesAboveAverage(int[] salesInMonth) {
+    public int amountMountSalesAboveAverage(long[] salesInMonth) {
         long average = averageSalesAmount(salesInMonth);
         int count = 0;
-        for (int sale : salesInMonth) {
+        for (long sale : salesInMonth) {
             if (sale > average) {
                 count++;
             }
